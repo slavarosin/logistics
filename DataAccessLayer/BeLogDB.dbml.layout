@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.125, 16.125" name="BeLogDB">
+  <DataContextMoniker Name="/BeLogDB" />
+  <nestedChildShapes>
+    <classShape Id="7ba43814-14e2-438f-8159-4d87f92aaa0e" absoluteBounds="1.75, 4.375, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/BeLogDB/Company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f959fc4-9e58-4633-8065-4d8add6a6513" absoluteBounds="1.7649999999999997, 4.835, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="18e1d18d-9475-4c7c-b675-98e15373ac46" absoluteBounds="8.5, 4.5, 2, 1.0961531575520827">
+      <DataClassMoniker Name="/BeLogDB/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ad7f7c2e-0c81-4045-8141-94903c08bf52" absoluteBounds="8.515, 4.96, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a7e58cb5-9978-4998-9484-39653a7dd382" absoluteBounds="8.875, 7.75, 2, 2.2465844726562505">
+      <DataClassMoniker Name="/BeLogDB/OrderItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60f6c9ad-b3ae-4a9c-9bf5-8e5afcc92210" absoluteBounds="8.89, 8.21, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="455a5b1e-0341-4d9d-85a8-f6d76c604733" absoluteBounds="6.375, 13.75, 2, 2.0822371419270844">
+      <DataClassMoniker Name="/BeLogDB/PaymentInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c82fed3-e239-4651-8817-afcdf932a66f" absoluteBounds="6.39, 14.21, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="635521a1-c76a-4f85-b905-6841c3fe15bb" absoluteBounds="5.5, 1.875, 2, 1.26050048828125">
+      <DataClassMoniker Name="/BeLogDB/Transport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47ebc08b-aa09-49bd-a508-40beaecb6fba" absoluteBounds="5.515, 2.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="659bd91e-8b85-4233-88b8-1f565a47f274" absoluteBounds="8.375, 1.5, 2, 2.0822371419270831">
+      <DataClassMoniker Name="/BeLogDB/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50a6df2a-f25a-4346-81cc-214d52cd8c05" absoluteBounds="8.39, 1.96, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="767953e9-a610-4b98-86cb-d5afe95f97dd" absoluteBounds="2.25, 1.5, 2, 1.75354248046875">
+      <DataClassMoniker Name="/BeLogDB/Manifest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca1e025d-41a8-4838-befb-0d9cba5c0873" absoluteBounds="2.265, 1.96, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c053a632-78fd-4c16-9128-35e9d28732e0" absoluteBounds="6, 6.5, 2, 5.20483642578125">
+      <DataClassMoniker Name="/BeLogDB/CMR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d390c9b-1507-46b2-a011-070d719d8424" absoluteBounds="6.015, 6.96, 1.9700000000000002, 4.64483642578125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8 : 8.87329223632813); (8.875 : 8.87329223632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BeLogDB/CMR/CMR_OrderItem" />
+      <nodes>
+        <classShapeMoniker Id="c053a632-78fd-4c16-9128-35e9d28732e0" />
+        <classShapeMoniker Id="a7e58cb5-9978-4998-9484-39653a7dd382" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.1875 : 13.75); (7.1875 : 11.7048364257812)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BeLogDB/PaymentInfo/PaymentInfo_CMR" />
+      <nodes>
+        <classShapeMoniker Id="455a5b1e-0341-4d9d-85a8-f6d76c604733" />
+        <classShapeMoniker Id="c053a632-78fd-4c16-9128-35e9d28732e0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.25 : 3.225771484375); (6.35416666666667 : 3.225771484375 : JumpStart); (6.52083333333333 : 3.225771484375 : JumpEnd); (7.78125 : 3.225771484375); (7.78125 : 6.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BeLogDB/Manifest/Manifest_CMR" />
+      <nodes>
+        <classShapeMoniker Id="767953e9-a610-4b98-86cb-d5afe95f97dd" />
+        <classShapeMoniker Id="c053a632-78fd-4c16-9128-35e9d28732e0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.4375 : 3.13550048828125); (6.4375 : 6.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BeLogDB/Transport/Transport_CMR" />
+      <nodes>
+        <classShapeMoniker Id="635521a1-c76a-4f85-b905-6841c3fe15bb" />
+        <classShapeMoniker Id="c053a632-78fd-4c16-9128-35e9d28732e0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.65625 : 13.75); (7.65625 : 11.7048364257812)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BeLogDB/PaymentInfo/PaymentInfo_CMR1" />
+      <nodes>
+        <classShapeMoniker Id="455a5b1e-0341-4d9d-85a8-f6d76c604733" />
+        <classShapeMoniker Id="c053a632-78fd-4c16-9128-35e9d28732e0" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="41f3ea66-dbfa-468b-bec6-4c2b9527566d" absoluteBounds="3.5, 8.625, 2, 4.3830997721354183">
+      <DataClassMoniker Name="/BeLogDB/Invoice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5f90821-1f19-4df3-8c42-4cbc226f7989" absoluteBounds="3.515, 9.085, 1.9700000000000002, 3.8230997721354165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.6249995 : 6.45723714192708); (2.6249995 : 10.8165498860677); (3.5 : 10.8165498860677)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BeLogDB/Company/Company_Invoice" />
+      <nodes>
+        <classShapeMoniker Id="7ba43814-14e2-438f-8159-4d87f92aaa0e" />
+        <classShapeMoniker Id="41f3ea66-dbfa-468b-bec6-4c2b9527566d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.40625 : 3.58223714192708); (8.40625 : 12.3877180989583); (7.27083333333333 : 12.3877180989583 : JumpStart); (7.10416666666667 : 12.3877180989583 : JumpEnd); (5.5 : 12.3877180989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BeLogDB/User/User_Invoice" />
+      <nodes>
+        <classShapeMoniker Id="659bd91e-8b85-4233-88b8-1f565a47f274" />
+        <classShapeMoniker Id="41f3ea66-dbfa-468b-bec6-4c2b9527566d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9cf7a0c5-0975-4bc5-b3b1-80837d3b3c71" absoluteBounds="4.5, 0.5, 2, 1.75354248046875">
+      <DataClassMoniker Name="/BeLogDB/OrderDispatch" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3119df86-b44e-4914-9081-e8a9b7bf350a" absoluteBounds="4.515, 0.96, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

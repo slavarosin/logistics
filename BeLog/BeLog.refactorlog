@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0">
+  <Operation Name="Rename Refactor" Key="64d3ebb2-ca1f-4ccc-814b-b7897cbd24e8" ChangeDateTime="11/22/2009 01:30:50">
+    <Property Name="ElementName" Value="[dbo].[OrderItem].[CMRId]" />
+    <Property Name="ElementType" Value="ISql100SimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[OrderItem]" />
+    <Property Name="ParentElementType" Value="ISql100Table" />
+    <Property Name="NewName" Value="CMRID" />
+  </Operation>
+</Operations>

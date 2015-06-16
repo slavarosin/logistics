@@ -1,0 +1,245 @@
+﻿Serbia ja Montenegro CS
+Läti LV
+Liibüa LY
+Maroko MA
+Moldova MD
+Madagaskar MG
+Marshalli saared MH
+Makedoonia MK
+Mali ML
+Mongoolia MN
+Macau MO
+Põhja-Mariaanid MP
+Martinique MQ
+Montserrat MS
+Malta MT
+Mauritius MU
+Maldiivid MV
+Malawi MW
+Mehhiko MX
+Malaisia MY
+Mosambiik MZ
+Namiibia NA
+Uus-Kaledoonia NC
+Norfolki saared NF
+Nigeeria NG
+Nikaraagua NI
+Holland NL
+Norra NO
+Nepaal NP
+Nauru NR
+Uus-Meremaa NZ
+Omaan OM
+Panama PA
+Peruu PE
+Prantsuse Polüneesia PF
+Paapua Uus-Guinea PG
+Filipiinid PH
+Poola PL
+St. Pierre ja Miquelon PM
+Pitcairni saar PN
+Puerto Rico PR
+Portugal PT
+Palau PW
+Paraguay PY
+Qatar QA
+Reunion RE
+Luksemburg LU
+Rumeenia RO
+Rwanda RW
+Saudi Araabia SA
+Saalomoni saared SB
+Seišellid SC
+Sudaan SD
+Rootsi SE
+Singapur SG
+St. Helena SH
+Sloveenia SI
+Andorra AD
+Araabia Ühendemiraadid AE
+Afganistaan AF
+Antigua ja Barbuda AG
+Anguilla AI
+Albaania AL
+Hollandi Antillid AN
+Angoola AO
+Argentiina AR
+Ameerika Samoa AS
+Austria AT
+Austraalia AU
+Aruuba AW
+Aserbaidžaan AZ
+Bosnia Hertsegoviina BA
+Barbados BB
+Belgia BE
+Bulgaaria BG
+Bahrain BH
+Burundi BI
+Benin BJ
+Brunei Darussalam BN
+Brasiilia BR
+Bahama BS
+Bhutan BT
+Botswaana BW
+Belize BZ
+Kanada CA
+Kookossaared CC
+Šveits CH
+Elevandiluurannik CI
+Cooki saared CK
+Tšiili CL
+Kamerun CM
+Hiina CN
+Costa Rica CR
+Kuuba CU
+Jõulusaar CX
+Tšehhi Vabariik CZ
+Djibouti DJ
+Taani DK
+Dominica DM
+Dominica Vabariik DO
+Alžeeria DZ
+Ecuador EC
+Eesti EE
+Egiptus EG
+Saint Lucia LC
+Libeeria LR
+Lesotho LS
+Leedu LT
+Burkina Faso BF
+Bermuuda BM
+Boliivia BO
+Merel ZZ
+Valgevene BY
+Kesk-Aafrika Vabariik CF
+Kolumbia CO
+Roheneemesaared CV
+Saksamaa DE
+Slovakkia SK
+Senegal SN
+Guam GU
+Gaza sektor GZ
+Horvaatia HR
+Iisrael IL
+Iraan IR
+Kambodža KH
+Saint Kitts - Nevis KN
+Kasahstan KZ
+Mayotte YT
+Liechtenstein LI
+Monaco MC
+Mauritaania MR
+Niger NE
+Niue NU
+Pakistan PK
+Vene Föderatsioon RU
+Armeenia AM
+Bangladesh BD
+Kongo CG
+Küpros CY
+Svalbard ja Jan Mayen SJ
+Süüria Araabia Vabariik SY
+Tansaania Ühendatud Vabariik TZ
+Sambia ZM
+Eritrea ER
+Suurbrittannia GB
+India IN
+Kõrgõzstan KG
+Sri Lanka LK
+Ameerika Ühendriigid US
+Rahvusvaheline tsoon XZ
+Sierra Leone SL
+San Marino SM
+Somaalia SO
+Suriname SR
+Sao Tome ja Principe ST
+El Salvador SV
+Svaasimaa SZ
+Turks ja Caicos TC
+Tšaad TD
+Prantsuse alad lõunas ja Antarktikas TF
+Togo TG
+Tai TH
+Tadžikistan TJ
+Tokelau TK
+Türkmenistan TM
+Tuneesia TN
+Tonga TO
+Türgi TR
+Trinidad ja Tobago TT
+Tuvalu TV
+Taiwan TW
+Ukraina UA
+Uganda UG
+Ameerika Ühendriikide hajasaared UM
+Uruguay UY
+Usbekistan UZ
+Vatikani Linnriik VA
+Saint Vincent ja Grenadiinid VC
+Venetsueela VE
+Briti Neitsisaared VG
+Ühendriikide Neitsisaared VI
+Vietnam VN
+Vanuatu VU
+Jordani Läänekallas WE
+Wallise ja Futuna saared WF
+Samoa WS
+Jeemen YE
+Lõuna-Aafrika ZA
+Sair ZR
+Zimbabwe ZW
+Lõuna-Gruusia ja Lõuna Võileiva saared GS
+Kongo Demokraatlik Vabariik CD
+Antarktika AQ
+Muu OT
+Tahiiti TA
+Myanmar (Former Burma) MM
+Ida-Timor TL
+Hispaania ES
+Etioopia ET
+Soome FI
+Fidži FJ
+Falklandi saared FK
+Mikroneesia FM
+Fääri saared FO
+Prantsusmaa FR
+Gabon GA
+Grenada GD
+Gruusia GE
+Prantsuse Guajaana GF
+Ghana GH
+Gibraltar GI
+Gröönimaa GL
+Gambia GM
+Guinea GN
+Guadeloupe GP
+Ekvatoriaalne Guinea GQ
+Kreeka GR
+Guatemala GT
+Guinea-Bissau GW
+Guyana GY
+Hong Kong HK
+Heardi ja Mcdonaldi saared HM
+Honduras HN
+Haiti HT
+Ungari HU
+Indoneesia ID
+Iirimaa IE
+India ookeani territoorium IO
+Iraak IQ
+Island IS
+Itaalia IT
+Jamaika JM
+Jordaania JO
+Jaapan JP
+Keenia KE
+Kiribati KI
+Comoros KM
+Korea Demokraatlik Rahvavabariik (Põhja-) KP
+Korea Vabariik (Lõuna-) KR
+Kuveit KW
+Caymani saared KY
+Lao Demokraatlik Rahvavabariik LA
+Liibanon LB
+Lääne-Sahaara EH
+Montenegro ME

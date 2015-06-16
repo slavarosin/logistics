@@ -1,0 +1,5 @@
+﻿ALTER TABLE [dbo].[OrderItem]
+	ADD CONSTRAINT [FK_OrderItem_CMR] 
+	FOREIGN KEY (CMRID)
+	REFERENCES CMR (ID)	
+

@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="BeLogForm.Controls.CtrlLogin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="320" Height="80" Width="300" Name="UserControlLogin" IsVisibleChanged="UserControlLogin_IsVisibleChanged">
+    <Grid Height="75" Width="300" Name="grdMain">
+        <Button TabIndex="1" Content="Login" Height="23" HorizontalAlignment="Right" Margin="0,12,12,0" Name="btnLogin" VerticalAlignment="Top" Width="75" Click="btnLogin_Click" Panel.ZIndex="1" />
+        <Label Visibility="Hidden" Foreground="Red" Content="Wrong password or username" Height="26" HorizontalAlignment="Left" Margin="12,41,0,0" Name="lblAttention" VerticalAlignment="Top" Width="129" FontSize="9" />
+        <ComboBox TabIndex="0" Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="comboBoxUsers" VerticalAlignment="Top" Width="180" SelectionChanged="comboBoxUsers_SelectionChanged" FontWeight="Normal" HorizontalContentAlignment="Left" />
+    </Grid>
+</UserControl>

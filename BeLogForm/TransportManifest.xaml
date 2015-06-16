@@ -1,0 +1,82 @@
+﻿<Window x:Class="BeLogForm.TransportManifest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:BeLogForm.ValueConverters"
+        Title="TransportManifest" Height="700" Width="1000" WindowStartupLocation="CenterScreen" Icon="/BeLogForm;component/BeLogLogo.ico">
+    <Window.Resources>
+        <local:StringDefaultValueConverter x:Key="DefaultStringConverter"/>
+        <Style x:Key="DateLabel" TargetType="Label">
+            <Setter Property="ContentStringFormat" Value="yyyy.MM.dd"/>
+        </Style>
+    </Window.Resources>
+
+
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <Grid Name="transportManifestGrid" DataContext="{Binding Manifest}" Height="656">
+            <Menu Height="26" Margin="1,-2,0,0" Name="menu1" VerticalAlignment="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="New Transport Manifest" Click="btnNewTransManifest_Click" />
+                    <MenuItem Header="Open Transport Manifest" Click="btn_TransManifestSearch_Click" />
+                    <Separator />
+                    <MenuItem Header="Close" Click="fileExitMenuItem_Click" />
+                </MenuItem>
+            </Menu>
+            <Button Content="New Transport Manifest" Height="25" HorizontalAlignment="Left" Margin="40,29,0,602" Name="btnNewTM"  Click="btnNewTransManifest_Click" Width="125" TabIndex="44" />
+            <Button Content="Save Transport Manifest" Height="25" HorizontalAlignment="Left" Margin="165,29,0,602" Name="btnSaveTM"  Click="btnSaveTM_Click" Width="125" TabIndex="44" />
+            <Button Content="Open Transport Manifest" Height="25" Margin="290,29,0,602" Name="btnEditTM"  Click="btn_TransManifestSearch_Click" TabIndex="44" HorizontalAlignment="Left" Width="125" />
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding}" Height="200" Margin="26,190,13,0" Name="dataGrid1" VerticalAlignment="Top" RowEditEnding="dataGrid1_RowEditEnding">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Pos. nr"  IsReadOnly="True" Binding="{Binding Path =PositionId}"/>
+                    <DataGridTemplateColumn Header="Consignor">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox Name="cbConsignor" SelectedItem="{Binding Path=Consignor,Mode=TwoWay}" SelectionChanged="cbConsignor_SelectionChanged" Loaded="cbxInfo_Loaded"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Consignee">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox Name="cbConsignee"  SelectedItem="{Binding Path=Consignee,Mode=TwoWay}" SelectionChanged="cbConsignor_SelectionChanged"  Loaded="cbxInfo_Loaded"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="K.arv"  IsReadOnly="True"  Binding="{Binding Path =PlaceNum}"/>
+                    <DataGridTextColumn Header="Pakkimisviis"  IsReadOnly="True"  Binding="{Binding Path =PackagingMode}"/>
+                    <DataGridTextColumn Header="Bruttokaal"  IsReadOnly="True"  Binding="{Binding Path =Bruttoweight}"/>
+                    <DataGridTemplateColumn Header="">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Add to CMR" IsEnabled="{Binding IsNewItem}"  Click="Button_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Edit CMR" IsEnabled="{Binding AllowEdit}"  Click="Button_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button  Content="Delete CMR" IsEnabled="{Binding AllowEdit}" Click="Button_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBox Height="23" Margin="161,75,480,0" Name="tbxManifestName" Text="{Binding Path = ManifesName,Converter={StaticResource DefaultStringConverter}}" VerticalAlignment="Top" />
+            <TextBox Height="23" Margin="161,104,480,0" Name="tbxDeparture" Text="{Binding Path= Departure,Converter={StaticResource DefaultStringConverter}}" VerticalAlignment="Top" />
+            <TextBox Height="23" Margin="161,133,480,0" Name="tbxArrival"  Text="{Binding Path= Arrival,Converter={StaticResource DefaultStringConverter}}" VerticalAlignment="Top" />
+            <Label Height="28" Margin="161,162,480,0" Name="lblManifestDate"  Content="{Binding Path= ManifestDate}"  Style="{StaticResource DateLabel}" VerticalAlignment="Top" />
+            <Label Content="Manifest Name :" Height="28" Margin="29,73,823,0" Name="lblMnfstName" VerticalAlignment="Top" />
+            <Label Content="Start :" Height="28" Margin="29,102,823,0" Name="lblMnfstStart" VerticalAlignment="Top" />
+            <Label Content="Destination :" Height="28" Margin="29,131,823,0" Name="lblMnfsDest" VerticalAlignment="Top" />
+            <Button Content="Print Manifest" Height="23" HorizontalAlignment="Left" Margin="818,29,0,0" Name="BtnPrintManifest" VerticalAlignment="Top" Width="130" Click="BtnPrintManifest_Click" />
+            <Button Content="Print Manifest&amp;CMRs" Height="23" HorizontalAlignment="Left" Margin="818,58,0,0" Name="btnPrintAll" VerticalAlignment="Top" Width="130" Click="btnPrintAll_Click" />
+            <Label Content="Manifest Date :" Height="28" Margin="29,162,823,0" Name="label1" VerticalAlignment="Top" />
+        </Grid>
+    </ScrollViewer>
+</Window>

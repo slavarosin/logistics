@@ -1,0 +1,4 @@
+﻿--ALTER TABLE [dbo].[CMR]
+--	ADD CONSTRAINT [FK_Company_SenderID] 
+--	FOREIGN KEY (SenderID)	
+--	REFERENCES Company (ID) ON DELETE NO ACTION

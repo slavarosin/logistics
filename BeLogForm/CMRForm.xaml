@@ -1,0 +1,140 @@
+﻿<Window x:Class="BeLogForm.CMRForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:local="clr-namespace:BeLogForm.ValueConverters"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:ds="clr-namespace:BeLogForm"
+        Title="BeLog CMR"  Icon="/BeLogForm;component/BeLogLogo.png" MinWidth="747" MaxWidth="1000" Top="0" WindowStartupLocation="CenterScreen" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignWidth="1000" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <local:DefaultDateTimeValueConverter x:Key="DefaultDTConverter"/>
+        <local:StringDefaultValueConverter x:Key="DefaultStringConverter"/>
+    </Window.Resources>
+
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <Grid Name="mainGrid"  DataContext="{Binding}" >
+            <Label Content="User Created:" FontSize="12" Height="28" HorizontalAlignment="Left" IsEnabled="True" Margin="10,42,0,0" Name="lblTextUserCreated" VerticalAlignment="Top" Width="80
+                   " HorizontalContentAlignment="Right" />
+            <Label Content="{Binding Path=UserCreated,Mode=TwoWay}" FontSize="12" Height="28" HorizontalAlignment="Left" IsEnabled="True" Margin="90,42,0,0" Name="lblUserCreated" VerticalAlignment="Top" Width="70
+                   " HorizontalContentAlignment="Left" />
+            <Label Content="CMR ID" Height="35" HorizontalAlignment="Left" Margin="115,35,0,0" Name="lblCMRID" VerticalAlignment="Top" Width="120" FontSize="20" HorizontalContentAlignment="Right" />
+            <TextBox Height="35" HorizontalAlignment="Left" Margin="244,35,0,0" Name="tbxCMRId" VerticalAlignment="Top" Width="162" Text="" FontSize="26" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" IsEnabled="True"  IsReadOnly="True" />
+            <DataGrid AutoGenerateColumns="True" Height="125" Name="dataGrid1" VerticalAlignment="Top" DataContext="{Binding}" FrozenColumnCount="1" AreRowDetailsFrozen="False" RowHeight="25" AlternationCount="10" CanUserResizeRows="False" CanUserDeleteRows="True" ItemsSource="{Binding Path=OrderItems}" CanUserAddRows="True"  RowDetailsVisibilityMode="VisibleWhenSelected" EnableRowVirtualization="True" IsManipulationEnabled="True" UseLayoutRounding="True" ColumnWidth="Auto" Margin="1,475,24,0" TabIndex="18">
+            </DataGrid>
+            <Label Content="Saatja:" DataContext="{Binding}" FontSize="15" Height="28" HorizontalAlignment="Left" IsEnabled="True" Margin="157,67,0,0" Name="label1" VerticalAlignment="Top" Width="108" HorizontalContentAlignment="Right" />
+            <Label Content="Saaja:" DataContext="{Binding}" FontSize="15" Height="28" HorizontalAlignment="Left" IsEnabled="True" Margin="165,180,0,0" Name="label5" VerticalAlignment="Top" Width="99" HorizontalContentAlignment="Right" />
+            <ComboBox Height="23" Margin="107,326,0,0" Name="cbxDeliveryPlace" VerticalAlignment="Top" IsEditable="True" Text="{Binding Path=DeliveryPlace}" TabIndex="6" ItemsSource="{Binding StringFormat=\{0\,100\}}" SelectionChanged="cbxDeliveryPlace_SelectionChanged" HorizontalAlignment="Left" Width="229" />
+            <ComboBox Height="23" Margin="107,358,0,0" Name="cbxDeliveryCountry" VerticalAlignment="Top" IsEditable="False" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding Path=DeliveryCountry}" TabIndex="7" HorizontalAlignment="Left" Width="229" />
+            <Label Content="Mahalaadimiskoht:" DataContext="{Binding}" FontSize="15" Height="28" HorizontalAlignment="Left" IsEnabled="True" Margin="129,292,0,0" Name="label9" VerticalAlignment="Top" Width="132" />
+            <ComboBox DataContext="{Binding}" Height="23" Margin="104,441,0,0" Name="cbxTakingCountry" VerticalAlignment="Top" IsEditable="False" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding Path=TakingCountry}" TabIndex="10" HorizontalAlignment="Left" Width="232" />
+            <Label Content="Pealelaadimiskoht:" DataContext="{Binding}" FontSize="15" Height="28" HorizontalAlignment="Left" IsEnabled="True" Margin="90,384,0,0" Name="label10" VerticalAlignment="Top" Width="177" HorizontalContentAlignment="Right" />
+            <Label Content="Riik" HorizontalAlignment="Left" Margin="53,441,0,0" Name="lblTakingCountry" Width="45" HorizontalContentAlignment="Right" Height="28" VerticalAlignment="Top" />
+            <ComboBox Height="23" Margin="104,413,0,0" Name="cbxTakingPlace" VerticalAlignment="Top" IsEditable="True"  Text="{Binding Path=TakingPlace}" TabIndex="8" ItemsSource="{Binding StringFormat=\{0\,100\}}" SelectionChanged="cbxTakingPlace_SelectionChanged" HorizontalAlignment="Left" Width="232" />
+            <Label Content="Koht" Height="28" HorizontalAlignment="Left" Margin="61,324,0,0" Name="lblDeliveryPlace" VerticalAlignment="Top" Width="40" HorizontalContentAlignment="Right" />
+            <TextBox Height="80" Margin="0,326,24,0"  AcceptsReturn="True" TextWrapping="Wrap" Name="tbxAttachedDocuments" VerticalAlignment="Top" MaxWidth="400" Text="{Binding Path=AttachedDocuments}" TabIndex="17" MaxLines="2" MaxLength="82" MaxHeight="80" HorizontalAlignment="Right" Width="381" />
+            <Label Content="Lisatud dokumendid:" DataContext="{Binding}" FontSize="15" Height="28" HorizontalAlignment="Left" IsEnabled="True" Margin="658,292,0,0" Name="label16" VerticalAlignment="Top" Width="150" />
+            <TextBox Height="23" Margin="65,602,0,0" Name="tbxClass" VerticalAlignment="Top" Text="{Binding Path=ClassValue}" TabIndex="19" HorizontalAlignment="Left" Width="191" />
+            <Label Content="Klass" Height="28" HorizontalAlignment="Left" Margin="26,602,0,0" Name="label25" VerticalAlignment="Top" Width="38" />
+            <TextBox Height="23" Margin="327,602,0,0" Name="tbxNum" VerticalAlignment="Top" Text="{Binding Path=Num, StringFormat=\{0:0\}}" TabIndex="20" HorizontalAlignment="Left" Width="169" />
+            <Label Content="Number" Height="28" Margin="0,602,421,0" Name="label26" VerticalAlignment="Top" HorizontalAlignment="Right" Width="55" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="563,602,0,0" Name="tbxLetter" VerticalAlignment="Top" Width="161" Text="{Binding Path=Letter}" TabIndex="21" DataContext="{Binding}" />
+            <Label Content="Täht" Height="28" HorizontalAlignment="Left" Margin="279,602,0,0" Name="label27" VerticalAlignment="Top" Width="34" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="790,602,0,0" Name="tbxADR" VerticalAlignment="Top" Width="164" Text="{Binding Path=ADR}" TabIndex="22" />
+            <Label Content="ADR" Height="28" Margin="730,600,0,0" Name="label28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="35" />
+            <Label Content="Koostatud" Height="28" HorizontalAlignment="Left" Margin="742,796,0,0" Name="label42" VerticalAlignment="Top" Width="65" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="805,797,0,0" Name="tbxEstIn" VerticalAlignment="Top" Width="149" Text="{Binding Path=EstablieshedIn}" TabIndex="37" IsReadOnly="False" />
+            <Label Content="Kuupäev" Height="28" HorizontalAlignment="Left" Margin="745,824,0,0" Name="label43" VerticalAlignment="Top" Width="57" />
+            <DatePicker DataContext="{Binding}" Height="25" HorizontalAlignment="Left" Margin="805,827,0,0" Name="datePicker2" Text="{Binding Path=EstablieshedDate,Converter={StaticResource DefaultDTConverter},Mode=TwoWay}"   VerticalAlignment="Top"   Width="149" CalendarClosed="datePicker_CalendarClosed" TabIndex="38" ToolTip="Se," IsEnabled="True" />
+            <Label Content="Registr. number" HorizontalAlignment="Left" Margin="2,889,0,0" Name="label45" Width="95" Height="24" VerticalAlignment="Top" />
+            <TextBox HorizontalAlignment="Left" Margin="95,890,0,0" Name="tbxRegNum" Width="152" Text="{Binding Path=Transport.RegisterNumber}" Height="23" VerticalAlignment="Top" TabIndex="40" MaxLines="1" />
+            <Label IsEnabled="True" Content="Veduk" Height="28" HorizontalAlignment="Left" Margin="584,887,0,0" Name="label46" VerticalAlignment="Top" Width="45" />
+            <TextBox IsEnabled="True" Height="23" HorizontalAlignment="Left" Margin="629,889,0,0" Name="tbxTruck" VerticalAlignment="Top" Width="161" Text="{Binding Path=Transport.Model}" TabIndex="41" />
+            <!--<Label IsEnabled="False" Content="Registr. number" Height="28" HorizontalAlignment="Left" Margin="302,855,0,0" Name="label47" VerticalAlignment="Top" Width="95" HorizontalContentAlignment="Right" />
+            <TextBox IsEnabled="False" Height="23" HorizontalAlignment="Left" Margin="397,856,0,0" Name="tbxRegNum2" VerticalAlignment="Top" Width="120" TabIndex="42" />
+            <Label Content="Veduk" Height="28" HorizontalAlignment="Left" Margin="352,883,0,0" Name="label48" VerticalAlignment="Top" Width="45" IsEnabled="False" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="397,885,0,0" Name="tbxTruck2" VerticalAlignment="Top" Width="120" TabIndex="43" />-->
+            <!--<TextBox Height="23" HorizontalAlignment="Left" Margin="561,891,0,0" Name="tbxEstDate" VerticalAlignment="Top" Width="82" IsReadOnly="True" Text="{Binding Path=EstablieshedDate,StringFormat=\{0:dd.MM.yyyy\}}" />-->
+            <Label Content="Saaja juhised:" Height="28" HorizontalAlignment="Left" Margin="137,639,0,0" Name="label29" VerticalAlignment="Top" Width="126" HorizontalContentAlignment="Right" />
+
+            <TextBox Height="84" HorizontalAlignment="Left"  AcceptsReturn="True" Margin="2,666,0,0" Name="tbxSendInstructions" VerticalAlignment="Top" Width="320" Text="{Binding Path=SendInstruction}" TabIndex="23" MaxWidth="320" VerticalScrollBarVisibility="Auto" MaxLength="400" />
+            
+            <Label Content="Teised" FontSize="10" Height="21" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="381,751,0,0" Name="label38" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="83" />
+            <Label Content="Juurdehindlus" FontSize="10" Height="21" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="381,729,0,0" Name="label37" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="83" />
+            <Label Content="Veohind" FontSize="10" Height="24" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="381,660,0,0" Name="label34" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="83" />
+            <Label Content="Allahindlus" FontSize="10" Height="21" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="378,683,0,0" Name="label35" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="86" />
+            <TextBox Height="20" HorizontalAlignment="Left" Margin="470,662,0,0" Name="tbxSendCarrChrge" VerticalAlignment="Top" Width="160" Text="{Binding Path=SenderPayment.CarriageCharges}" HorizontalContentAlignment="Right" TabIndex="24" />
+            <TextBox Height="20" HorizontalAlignment="Left" Margin="470,730,0,0" Name="tbxSendSupplements" VerticalAlignment="Top" Width="160" HorizontalContentAlignment="Right"  Text="{Binding Path=SenderPayment.Supplements}" TabIndex="27" />
+            <TextBox Height="20" HorizontalAlignment="Left" Margin="790,662,0,0" Name="tbxConsCarrChrge" VerticalAlignment="Top" Width="160" HorizontalContentAlignment="Right"  Text="{Binding Path=ConsigneePayment.CarriageCharges}" TabIndex="29" />
+            <TextBox Height="20" HorizontalAlignment="Left" Margin="790,684,0,0" Name="tbxConsDeductions" VerticalAlignment="Top" Width="160" HorizontalContentAlignment="Right"  Text="{Binding Path=ConsigneePayment.Deductions}" TabIndex="30" />
+            <TextBox Height="20" HorizontalAlignment="Left" Margin="790,707,0,0" Name="tbxConsBalance" VerticalAlignment="Top" Width="160" HorizontalContentAlignment="Right" Text="{Binding Path=ConsigneePayment.Saldo}" TabIndex="31" />
+            <TextBox Height="39" HorizontalAlignment="Left" Margin="351,819,0,0" Name="tbxSpecAgr" Text="{Binding Path=SpecialAgreements}" VerticalAlignment="Top" Width="280"  AcceptsReturn="True" TextWrapping="Wrap" TabIndex="36" MaxLines="2" MaxLength="74" MaxWidth="280" MaxHeight="39" />
+            <ComboBox Height="20" HorizontalAlignment="Left" Margin="630,662,0,0" Name="cbxCurrCarrChrge" VerticalAlignment="Top" Width="160" IsEditable="True" />
+            <ComboBox Height="20" HorizontalAlignment="Left" Margin="630,707,0,0" Name="cbxCurrBalance" VerticalAlignment="Top" Width="160" IsEditable="True" />
+            <ComboBox Height="20" HorizontalAlignment="Left" Margin="630,730,0,0" Name="cbxCurrSupp" VerticalAlignment="Top" Width="160" IsEditable="True" />
+            <ComboBox Height="20" HorizontalAlignment="Left" Margin="630,752,0,0" Name="cbxCurrOthChrge" VerticalAlignment="Top" Width="160" IsEditable="True" />
+            <CheckBox Height="20" HorizontalAlignment="Left" Margin="256,804,0,0" Name="chxCMRAgreemntLegal" VerticalAlignment="Top" Width="18" TabIndex="34" />
+            <Label Content="Veedu on koooskõlas CMR konventsiooniga:" Height="28" Margin="6,797,0,0" Name="label41" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250" />
+            <Label Content="Kuulub maksmisele:" FontSize="10" Height="27" HorizontalAlignment="Left" Margin="367,638,0,0" Name="label30" VerticalAlignment="Top" Width="100" />
+            <Label Content="Saatja" FlowDirection="LeftToRight" FontSize="10" Height="27" HorizontalContentAlignment="Center" Margin="492,634,0,0" Name="label31" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="107" />
+            <Label Content="Valuuta" FontSize="10" Height="27" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="658,634,0,0" Name="label32" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="107" />
+            <Label Content="Kauba saaja" FontSize="10" Height="27" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="818,634,0,0" Name="label33" VerticalAlignment="Top" VerticalContentAlignment=
+               "Center" Width="107" />
+            <TextBox Height="20" HorizontalAlignment="Left" Margin="470,752,0,0" Name="tbxSendOthChrge" VerticalAlignment="Top" Width="160" HorizontalContentAlignment="Right" Text="{Binding Path=SenderPayment.OtherCharges}" TabIndex="28" />
+            <TextBox Height="20" HorizontalAlignment="Left" Margin="790,752,0,0" Name="tbxConsOthChrge" VerticalAlignment="Top" Width="160" HorizontalContentAlignment="Right" Text="{Binding Path=ConsigneePayment.OtherCharges}" TabIndex="33" />
+            <TextBox Height="20" HorizontalAlignment="Left" Margin="470,707,0,0" Name="tbxSendBalance" VerticalAlignment="Top" Width="160" HorizontalContentAlignment="Right"  Text="{Binding Path=SenderPayment.Saldo}" TabIndex="26" />
+            <Grid Name="senderGrid" DataContextChanged="senderGrid_DataContextChanged" Height="97" Margin="2,90,0,758" Width="488" HorizontalAlignment="Left">
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="107,0,0,65" Name="cbxSenderName" VerticalAlignment="Bottom" Width="227" IsEditable="True" Text="{Binding Path=Name,Mode=OneWay,Converter={StaticResource DefaultStringConverter}}" ItemsSource="{Binding StringFormat=\{0\,100\}}" TabIndex="0" SelectionChanged="cbxCompanyName_SelectionChanged" />
+                <ComboBox Height="23" HorizontalAlignment="Left"  Margin="107,0,0,36" Name="cbxSenderAdress"  VerticalAlignment="Bottom" Width="227" Text="{Binding Path=Address,Converter={StaticResource DefaultStringConverter}}" IsEditable="False" TabIndex="1" ItemsSource="{Binding StringFormat=\{0\,100\}}" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="107,0,0,7" Name="cbxSenderCountry"  DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding Path=Country,Converter={StaticResource DefaultStringConverter}}"   VerticalAlignment="Bottom" Width="227" IsEditable="False" TabIndex="2" />
+                <Button Content="Edit" Height="23" HorizontalAlignment="Left" Margin="350,0,0,65" Name="btnEdit1" VerticalAlignment="Bottom" Width="42" Click="btnEdit1_Click" />
+                <Label Content="Nimi" FontFamily="Roman" FontSize="12" Height="28" HorizontalContentAlignment="Right" Margin="47,9,0,0" Name="lblSenderName" VerticalAlignment="Top" HorizontalAlignment="Left" Width="52" />
+                <Label Content="Address" Margin="63,38,0,0" Name="lblSenderAdress" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="48" />
+                <Label Content="Riik" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="53,62,0,0" Name="lblSenderCountry" VerticalAlignment="Top" Width="45" />
+            </Grid>
+            <TextBox Height="20" HorizontalAlignment="Left" Margin="470,684,0,0" Name="tbxSendDeductions" VerticalAlignment="Top" Width="160"  HorizontalContentAlignment="Right" Text="{Binding Path=SenderPayment.Deductions}" TabIndex="25" />
+            <Label Content="Saldo" FontSize="10" Height="24" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="382,705,0,0" Name="label36" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="83" />
+            <Button Content="Save" Height="25" HorizontalAlignment="Left" Margin="578,41,0,0" Name="btnPrint" VerticalAlignment="Top" Width="74" Click="btnPrint_Click" />
+            <Label Content="Maksetingimused:" Height="28" HorizontalAlignment="Left" Margin="20,819,0,0" Name="label50" VerticalAlignment="Top" Width="105" />
+            <ComboBox Height="20" HorizontalAlignment="Left" IsEditable="True" Margin="630,684,0,0" Name="cbxCurrDeductions" VerticalAlignment="Top" Width="160" />
+            <TextBox Height="20" HorizontalAlignment="Left" Margin="790,730,0,0" Name="tbxConsSupplements" VerticalAlignment="Top" Width="160" HorizontalContentAlignment="Right" Text="{Binding Path=ConsigneePayment.Supplements}" TabIndex="32" />
+            <Label Content="Koht" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="61,413,0,0" Name="lblTakingPlace" VerticalAlignment="Top" Width="40" />
+            <Label Content="Riik" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="56,353,0,0" Name="lblDeliveryCountry" VerticalAlignment="Top" Width="45" />
+            <Label Content="Saabumine laadimisele" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="0,857,0,0" Name="label44" VerticalAlignment="Top" Width="130" IsEnabled="False" Visibility="Hidden" />
+            <DatePicker DataContext="{Binding}" Text="{Binding Path=TimeOfDep,Converter={StaticResource DefaultDTConverter},Mode=TwoWay}" Height="25" HorizontalAlignment="Left" Margin="129,858,0,0" Name="datePicker3" VerticalAlignment="Top" Width="158" CalendarClosed="datePicker_CalendarClosed" TabIndex="39" IsEnabled="False" Visibility="Hidden" />
+            <!--<TextBox Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="225,891,0,0" Name="tbxTimeOfDepDate" Text="{Binding Path=TimeOfDep, StringFormat=\{0:dd.MM.yyyy\}}" VerticalAlignment="Top" Width="87" />-->
+            <Menu Height="26" HorizontalAlignment="Left" Margin="1,1,0,0" Name="menu1" VerticalAlignment="Top" Width="977">
+                <MenuItem Header="File">
+                    <MenuItem Header="New CMR" Click="btnNewCMR_Click" />
+                    <MenuItem Header="Open CMR" Click="btn_CMRSearch_Click" />
+                    <Separator />
+                    <MenuItem Header="Close" Click="fileExitMenuItem_Click" />
+                </MenuItem>
+                <MenuItem Header="Edit">
+                    <MenuItem Header="Companies" Click="MenuItem_Click" />
+                </MenuItem>
+            </Menu>
+            <ComboBox Height="23" HorizontalAlignment="Left" Margin="125,821,0,0" Name="cbxPaymInstr" VerticalAlignment="Top" Width="162" IsReadOnly="False" Text="{Binding Path=PaymentInstruction}" TabIndex="35">
+                <ComboBoxItem Content=""/>
+                <ComboBoxItem Content="Nonfranko" />
+                <ComboBoxItem Content="Franko" />
+                <ComboBoxItem Content="DDU" />
+                <ComboBoxItem Content="EXW" />
+                <ComboBoxItem Content="CPT" />
+            </ComboBox>
+            <Label Content="Saatja erimärkused:" Height="23" HorizontalAlignment="Left" Margin="519,790,0,0" Name="label14" VerticalAlignment="Top" Width="112" />
+            <Button Content="Salvesta ja trükki" Height="25" HorizontalAlignment="Left" Margin="629,918,0,2" Name="btnPrint2"  Click="btnPrint_Click" Width="161" TabIndex="44" />
+            <Button Content="Select CMR" Height="23" HorizontalAlignment="Left" Margin="415,42,0,0" Name="btn_CMRSearch" VerticalAlignment="Top" Width="75" Click="btn_CMRSearch_Click" />
+            <Button Content="New CMR" Height="23" HorizontalAlignment="Left" Margin="496,42,0,0" Name="btnNewCMR" VerticalAlignment="Top" Width="77" Click="btnNewCMR_Click" />
+            <Grid Name="consigneeGrid" Width="488" Margin="2,202,0,645" Height="98" HorizontalAlignment="Left">
+                <ComboBox Height="23" Margin="105,0,0,67" Name="cbxConsigneeName" VerticalAlignment="Bottom" IsEditable="True" Text="{Binding Path=Name,Mode=OneWay,Converter={StaticResource DefaultStringConverter}}" TabIndex="3" SelectionChanged="cbxCompanyName_SelectionChanged" HorizontalAlignment="Left" Width="229" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="105,0,0,37" Name="cbxConsigneeAdress" Text="{Binding Path=Address,Converter={StaticResource DefaultStringConverter}}" VerticalAlignment="Bottom" Width="229" IsEditable="False" TabIndex="4" ItemsSource="{Binding StringFormat=\{0\,100\}}" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="105,0,0,8" Name="cbxConsigneeCountry" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding Path=Country,Converter={StaticResource DefaultStringConverter}}" VerticalAlignment="Bottom" Width="229" IsEditable="False" TabIndex="5" />
+                <Button Content="Edit" Height="23" HorizontalAlignment="Left" Margin="350,0,0,69" Name="btnEdit2" VerticalAlignment="Bottom" Width="42" Click="btnEdit2_Click" />
+                <Label Content="Nimi" FontFamily="Roman" FontSize="12" Height="28" HorizontalAlignment="Left" Margin="6,7,0,0" Name="lblConsigneeName" VerticalAlignment="Top" Width="93" HorizontalContentAlignment="Right" />
+                <Label Content="Address" Height="28" Margin="51,37,0,0" Name="lblConsigneeAdress" VerticalAlignment="Top" Width="48" HorizontalAlignment="Left" />
+                <Label Content="Riik" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="54,61,0,0" Name="lblConsigneeCountry" Width="45" Height="28" VerticalAlignment="Top" />
+            </Grid>
+            <Button Content="Print CMR" Height="25" Margin="0,81,24,0" Name="btnPrintCMR" VerticalAlignment="Top" Click="btnPrintCMR_Click" HorizontalAlignment="Right" Width="85" />
+            <Button Content="Print Tags" Height="23" Margin="869,128,0,0" Name="btnPrintTags" VerticalAlignment="Top" Click="btnPrintTags_Click" HorizontalAlignment="Left" Width="85" />
+            <Button Visibility="Hidden" Content="Edit" Height="23" HorizontalAlignment="Left" Margin="352,413,0,0" Name="button1" VerticalAlignment="Top" Width="42" Click="button1_Click" />
+        </Grid>
+    </ScrollViewer>
+</Window>

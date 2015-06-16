@@ -1,0 +1,17 @@
+﻿AT
+CZ
+DK
+FR
+NL
+SE
+US
+IT
+RU
+DE
+BE
+GB
+FI
+BY
+LV
+LT
+EE
